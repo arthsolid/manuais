@@ -4,7 +4,7 @@ site_description = "Passo a passo dos atendimentos para os técnicos"
 nav = [
   { "Início" = "index.md" },
   { "Instalação" = [
-    { "Notebook Windows ARM" = "instalacao/notebook-windows-arm.md" },
+    { "Windows Home, ARM e licença" = "instalacao/notebook-windows-arm.md" },
   ] },
 ]
 
@@ -27,3 +27,10 @@ media = "(prefers-color-scheme: dark)"
 scheme = "slate"
 toggle.icon = "lucide/moon"
 toggle.name = "Mudar para modo claro"
+
+[project.markdown_extensions.admonition]
+[project.markdown_extensions.pymdownx.details]
+[project.markdown_extensions.pymdownx.superfences]
+[project.markdown_extensions.tables]
+[project.markdown_extensions.attr_list]
+[project.markdown_extensions.md_in_html]

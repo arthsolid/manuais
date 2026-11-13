@@ -8,4 +8,4 @@ Use a **busca** lá em cima (ex.: `licsol`, `tnsping`, `3227320323`) ou o **menu
 
 | Manual | Área | Atualizado |
 |---|---|---|
-| [Instalação do ERP em notebook Windows ARM](instalacao/notebook-windows-arm.md) | Instalação | 12/11/2026 |
+| [Instalação do ERP: 3 problemas (Windows Home, Windows ARM e licença local)](instalacao/notebook-windows-arm.md) | Instalação | 12/11/2026 |
