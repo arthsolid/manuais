@@ -1,0 +1,29 @@
+[project]
+site_name = "Central de Manuais"
+site_description = "Passo a passo dos atendimentos para os técnicos"
+nav = [
+  { "Início" = "index.md" },
+  { "Instalação" = [
+    { "Notebook Windows ARM" = "instalacao/notebook-windows-arm.md" },
+  ] },
+]
+
+[project.theme]
+language = "pt-BR"
+features = [
+  "search.highlight",
+  "navigation.sections",
+  "content.code.copy",
+]
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
+scheme = "default"
+toggle.icon = "lucide/sun"
+toggle.name = "Mudar para modo escuro"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
+scheme = "slate"
+toggle.icon = "lucide/moon"
+toggle.name = "Mudar para modo claro"
