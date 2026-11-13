@@ -16,9 +16,7 @@ O Problema 1 só acontece se o PC for Windows Home. O Problema 2 só acontece se
 
 **Sintoma:** no Explorador de Arquivos, ao digitar `\\IP` do servidor (para pegar as pastas Solidus e Temp), o Windows não localiza. No Prompt de Comando, o teste abaixo mostra o erro:
 
-```
-net use \\192.168.0.12\Solidus  →  Erro de sistema 3227320323
-```
+`net use \\192.168.0.12\Solidus` → **Erro de sistema 3227320323**
 
 **Por que acontece:** esse erro quer dizer que o notebook chega no servidor, então a rede está ok. Quem bloqueia é o próprio Windows 11 nas versões mais novas: ele passou a exigir uma "assinatura" na conexão com pastas de rede e a barrar o acesso sem usuário. Servidores antigos ou Linux não atendem essa exigência.
 
@@ -93,13 +91,8 @@ Neste caso deu erro: "Message 3511 not found; No message file for product=NETWOR
 
 No Prompt de Comando, rode `where tnsping` e `echo %ORACLE_HOME%`. Os dois caminhos têm que bater:
 
-```
-C:\Users\Usuario>where tnsping
-C:\oracle\app\product\11.2.0\client_1\BIN\tnsping.exe
+![where tnsping e echo %ORACLE_HOME%](img/08a-cmd-oracle-home.png)
 
-C:\Users\Usuario>echo %ORACLE_HOME%
-C:\Oracle\product\11.2.0\client_1
-```
 *O Oracle está em `C:\oracle\app\...`, mas a ORACLE_HOME aponta para `C:\Oracle\product\...` (sem o "app")*
 
 1. Tecla **Windows** > digite "variáveis de ambiente" > **Editar as variáveis de ambiente do sistema** > botão **Variáveis de Ambiente...**
@@ -107,17 +100,8 @@ C:\Oracle\product\11.2.0\client_1
 3. Troque o valor para `C:\oracle\app\product\11.2.0\client_1` > **OK** > **OK** > **OK**.
 4. Feche o Prompt de Comando, abra outro e rode `tnsping ORCL` de novo. Tem que terminar com **OK**.
 
-```
-C:\Users\Usuario>tnsping ORCL
-TNS Ping Utility for 32-bit Windows: Version 11.2.0.1.0 - Production
+![tnsping OK](img/08b-cmd-tnsping-ok.png)
 
-Arquivos de parâmetros usados:
-C:\oracle\app\product\11.2.0\client_1\network\admin\sqlnet.ora
-
-Usado o adaptador TNSNAMES para resolver o apelido
-Tentativa de contatar (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.12)(PORT = 1521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = orcl)))
-OK (30 ms)
-```
 *Depois da correção: tnsping OK*
 
 ### 2.4 A causa: o processador é ARM
